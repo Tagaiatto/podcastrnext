@@ -27,6 +27,7 @@ type EpisodeProps = {
 }
 
 export default function Episode({episode}: EpisodeProps) {
+  
   return (
     <div className={styles.episode}>
       <div className={styles.thumbnailContainer}>
@@ -63,7 +64,13 @@ export default function Episode({episode}: EpisodeProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: [
+      {
+        params: {
+          slug: 'a-importancia-da-contribuicao-em-open-source'
+        }
+      }
+    ],
     fallback: 'blocking',
   }
 }
